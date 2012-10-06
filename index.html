@@ -216,11 +216,66 @@ $ oil g model post title:varchar:50 body:text user_id:int
 							</code></pre>
 						</code>
 						<p>This wil generate your model post and generate a migration for it in your migrations folder</p>
-						<p><a href="http://fueldoc/packages/oil/generate.html#/controllers" target="_blank">Controllers</a></p>
+						<br />
+						<blockquote>Types: string[n], varchar[n], int[n], enum[value1, value2], decimal[n n], <br />float[n n], text, blob, datetime, date, timestamp and time.</blockquote>
+						<p><a href="http://fueldoc/packages/oil/generate.html#/models" target="_blank">Models</a></p>
+					</section>
+					<section>
+						<h3>Run migrations</h3>
+						<blockquote>Migrate everything: why?<br /> no more silly .sql files</blockquote><br />
+						<code>
+							<pre><code style="max-height: 540px;" contenteditable>
+$ oil r(efine) migrate
+							</code></pre>
+						</code>
+						<p>This wil put your db up to date with the last migration</p>
+						<p>you can specifie numbers or go up and down</p>
+						<p><a href="http://fueldoc/packages/oil/generate.html#/running_migrations" target="_blank">Migrations</a></p>
+					</section>
+					<section>
+						<h3>BANG Scaffold!</h3>
+						<code>
+							<pre><code style="max-height: 540px;" contenteditable>
+$ php oil g scaffold monkey name:string description:text
+    Created model: APPPATH/classes/model/monkey.php
+    Created migration: APPPATH/migrations/003_create_monkeys.php
+    Created controller: APPPATH/classes/controller/monkeys.php
+    Created view: APPPATH/views/monkeys/index.php
+    Created view: APPPATH/views/monkeys/view.php
+    Created view: APPPATH/views/monkeys/create.php
+    Created view: APPPATH/views/monkeys/edit.php
+    Created view: APPPATH/views/monkeys/_form.php
+							</code></pre>
+						</code>
+						<p></p>
+						<p>Generates all you need in one command :D <br />( usefull for admin panel)</p>
+						<p><a href="http://fueldoc/packages/oil/generate.html#/scaffolding" target="_blank">Scaffolding</a></p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>ORM</h1>
 					</section>
 					
+					<section>
+						<h1>ORM</h1>
+					</section>
 				</section>
-				
+				<section>
+					<section>
+						<h1>Pagination &amp; markdown</h1>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Demo</h1>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Extra</h1>
+					</section>
+				</section>
 				<section>
 					<h1>Thanks!</h1>
 					<h3>Questions & answers</h3>
