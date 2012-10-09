@@ -38,10 +38,11 @@
 					<h3>A brief intro of fuel php</h3>
 					<ol>
 						<li class="fragment">Introduction and structure</li>
-						<li class="fragment">oil</li>
+						<li class="fragment">Oil</li>
 						<li class="fragment">ORM</li>
-						<li class="fragment">Pagination and markdown</li>
-						<li class="fragment">Extra & QA</li>
+						<li class="fragment">Demos</li>
+						<li class="fragment">Extra</li>
+						<li class="fragment">QA</li>
 					</ol>
 				</section>
 				
@@ -229,7 +230,7 @@ $ oil r(efine) migrate
 							</code></pre>
 						</code>
 						<p>This wil put your db up to date with the last migration</p>
-						<p>you can specifie numbers or go up and down</p>
+						<p>you can specify numbers or go up and down</p>
 						<p><a href="http://fueldoc/packages/oil/generate.html#/running_migrations" target="_blank">Migrations</a></p>
 					</section>
 					<section>
@@ -255,25 +256,62 @@ $ php oil g scaffold monkey name:string description:text
 				<section>
 					<section>
 						<h1>ORM</h1>
+						<p>Orm is short for <strong>Object Relational Mapper</strong> which does 2 things: it maps your database table rows to objects and it allows you to establish relations between those objects.</p>
+						<p><a href="http://fueldoc/packages/orm/intro.html" target="_blank">ORM</a></p>
 					</section>
 					
 					<section>
-						<h1>ORM</h1>
+						<h3>Relation types</h3>
+						<ul>
+							<li>Belongs To <small>Has the primary key of the relation kept in its table, belongs to 1 related object.</small></li>
+							<li>Has One <small>Has its primary key saved in one other row of another table (which belongs to this), has 1 related object.</small></li>
+							<li>Has Many <small>Has its primary key saved in many other rows of another table (which belong to this one), has many related objects.</small></li>
+							<li>Many to Many <small>Have their primary keys saved in a table in between which keeps pairs of primary keys from both tables. Have and belong to many objects.</small></li>
+						</ul>
+					</section>
+					
+					<section>
+						<h3>Defined in the models</h3>
+							<pre><code style="max-height: 540px;" contenteditable>
+protected static $_has_many = array('comments');
+protected static $_belongs_to = array('post');
+protected static $_has_one = array('user');
+protected static $_many_many = array('tours');
+							</code></pre>
+						</code>
+						<br />
+						<h3>Fully configurated</h3>
+							<pre><code style="max-height: 540px;" contenteditable>
+protected static $_has_many = array('comments' => array(
+  'model_to' => 'Model_Fancy_Comment',
+  'key_from' => 'article_id',
+  'key_to' => 'parent_article_id',
+  'cascade_save' => true,
+  'cascade_delete' => false,
+  // there are some more options for specific relation types
+));
+							</code></pre>
+						</code>
+					</section>
+					<section>
+						<h3>Eager and lazy loading</h3>
+						<p><a href="http://fueldoc/packages/orm/relations/intro.html" target="_blank">Usage</a></p>
 					</section>
 				</section>
 				<section>
 					<section>
-						<h1>Pagination &amp; markdown</h1>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h1>Demo</h1>
+						<h1>DEMO</h1>
 					</section>
 				</section>
 				<section>
 					<section>
 						<h1>Extra</h1>
+						<ul>
+							<li>Pagination</li>
+							<li>Console</li>
+							<li>Tasks</li>
+							<li>inflector</li>
+						</ul>
 					</section>
 				</section>
 				<section>
